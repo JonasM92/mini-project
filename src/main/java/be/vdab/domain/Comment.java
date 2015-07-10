@@ -13,7 +13,7 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int id;
 
-    @Transient //TODO fix
+    @ManyToOne
     public User user;
     public int rating;
     public String content;

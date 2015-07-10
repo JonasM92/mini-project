@@ -16,7 +16,7 @@ public class User {
     public String password;
     public String email;
 
-    @Transient //TODO fix
+    @OneToMany
     public List<Comment> posts;
 
     public User(String userName, String password, String email, List<Comment> posts) {

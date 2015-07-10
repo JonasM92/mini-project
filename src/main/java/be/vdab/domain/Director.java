@@ -15,7 +15,7 @@ public class Director {
     public int id;
 
     public String name;
-    @Transient //TODO fix
+    @OneToMany
     public List<Movie> filmography;
 
     public Date birthDate;

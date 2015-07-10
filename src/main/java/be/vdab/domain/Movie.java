@@ -13,12 +13,12 @@ public class Movie {
     public int id;
 
     public String title;
-    @Transient //TODO: fix
-    public List<Actor> cast;
+    @OneToMany
+    public List<Character> cast;
 
     public int length;
 
-    @Transient //TODO: fix
+    @ManyToOne
     public Director director;
     public String summary;
     public String poster;
@@ -26,7 +26,7 @@ public class Movie {
     public int rating;
     public String trailer;
 
-    public Movie(String title, List<Actor> cast, int length, Director director, String summary, String poster, String genre, int rating, String trailer) {
+    public Movie(String title, List<Character> cast, int length, Director director, String summary, String poster, String genre, int rating, String trailer) {
         this.title = title;
         this.cast = cast;
         this.length = length;
@@ -40,8 +40,8 @@ public class Movie {
 
     public int getId() {return id;}
     public void setId(int id) {this.id = id;}
-    public List<Actor> getCast() {return cast;}
-    public void setCast(List<Actor> cast) {this.cast = cast;}
+    public List<Character> getCast() {return cast;}
+    public void setCast(List<Character> cast) {this.cast = cast;}
     public int getLength() {return length;}
     public void setLength(int length) {this.length = length;}
     public Director getDirector() {return director;}
