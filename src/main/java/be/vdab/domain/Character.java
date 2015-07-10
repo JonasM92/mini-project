@@ -16,26 +16,22 @@ public class Character {
     public int id;
 
     public String name;
-    public Gender g;
 
     public Actor actor;
-    public Film film;
+    public Movie movie;
 
-    public Character(String name, Gender g, Actor actor, Film film) {
+    public Character(String name, Gender g, Actor actor, Movie movie) {
         this.name = name;
-        this.g = g;
         this.actor = actor;
-        this.film = film;
+        this.movie = movie;
     }
 
     public int getId() {return id;}
     public void setId(int id) {this.id = id;}
     public String getName() {return name;}
     public void setName(String name) {this.name = name;}
-    public Gender getG() {return g;}
-    public void setG(Gender g) {this.g = g;}
     public Actor getActor() {return actor;}
     public void setActor(Actor actor) {this.actor = actor;}
-    public Film getFilm() {return film;}
-    public void setFilm(Film film) {this.film = film;}
+    public Movie getMovie() {return movie;}
+    public void setMovie(Movie movie) {this.movie = movie;}
 }

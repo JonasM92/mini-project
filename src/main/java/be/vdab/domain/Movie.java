@@ -10,7 +10,7 @@ import java.util.List;
  * Created by jeansmits on 10/07/15.
  */
 @Entity
-public class Film {
+public class Movie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int id;
@@ -27,7 +27,7 @@ public class Film {
     public int rating;
     public String trailer;
 
-    public Film(String title, List<Actor> cast, int length, Director director, String summary, String poster, String genre, int rating, String trailer) {
+    public Movie(String title, List<Actor> cast, int length, Director director, String summary, String poster, String genre, int rating, String trailer) {
         this.title = title;
         this.cast = cast;
         this.length = length;
