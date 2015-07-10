@@ -1,9 +1,6 @@
 package be.vdab.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.List;
 
 /**
@@ -16,10 +13,12 @@ public class Movie {
     public int id;
 
     public String title;
+    @Transient //TODO: fix
     public List<Actor> cast;
 
     public int length;
 
+    @Transient //TODO: fix
     public Director director;
     public String summary;
     public String poster;

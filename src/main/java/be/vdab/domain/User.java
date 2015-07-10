@@ -1,9 +1,6 @@
 package be.vdab.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.List;
 
 /**
@@ -19,6 +16,7 @@ public class User {
     public String password;
     public String email;
 
+    @Transient //TODO fix
     public List<Comment> posts;
 
     public User(String userName, String password, String email, List<Comment> posts) {
