@@ -25,12 +25,12 @@ public class MovieController {
 
 
     @RequestMapping("home/movie")
-    public String film(Map<String, Object> model, @RequestParam("id") Integer id) {
+    public String movie(Map<String, Object> model, @RequestParam("id") Integer id) {
         model.put("movie",movieRepository.findOne(id));
         return "movies/movie";
     }
     @RequestMapping("home/movies")
-    public String films(Map<String, Object> model) {
+    public String movies(Map<String, Object> model) {
         model.put("movies",movieRepository.findAll());
         return "movies/list";
     }
