@@ -5,6 +5,7 @@ import be.vdab.repository.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
@@ -33,6 +34,18 @@ public class MovieController {
     public String movies(Map<String, Object> model) {
         model.put("movies",movieRepository.findAll());
         return "movies/list";
+    }
+
+    @RequestMapping("home/movie/create")
+    public String form(Map<String, Object> model) {
+        model.put("movie",new Movie());
+        return "movies/create";
+    }
+
+    @RequestMapping(value= "home/movie/addMovie", method = RequestMethod.POST)
+    public String create(Movie movie) {
+        movieRepository.save(movie);
+        return "redirect:home/movies";
     }
 
 }

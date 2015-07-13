@@ -17,7 +17,7 @@
 <body>
   <div class="container">
     <h2>Registration</h2>
-    <sf:form action="/addUser" commandName="user" cssClass="form-group">
+    <sf:form action="home/addUser" commandName="user" cssClass="form-group">
       <sf:hidden path="id" />
       <label for="email">E-mail Address:</label>
       <sf:input path="email" />
