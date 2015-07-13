@@ -7,6 +7,7 @@ import java.util.List;
  * Created by jeansmits on 10/07/15.
  */
 @Entity
+@Table(uniqueConstraints={@UniqueConstraint(columnNames = "userName")})
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
