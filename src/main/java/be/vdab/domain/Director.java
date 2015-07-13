@@ -15,12 +15,15 @@ public class Director {
     public int id;
 
     public String name;
-    @OneToMany
+    @OneToMany(mappedBy = "director")
     public List<Movie> filmography;
 
     public Date birthDate;
     public Gender g;
     public String picture;
+
+    public Director() {
+    }
 
     public Director(String name, List<Movie> filmography, Date birthDate, Gender g, String picture) {
         this.name = name;

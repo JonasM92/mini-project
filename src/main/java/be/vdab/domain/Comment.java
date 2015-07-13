@@ -18,12 +18,18 @@ public class Comment {
     public int rating;
     public String content;
     public Date date;
+    @ManyToOne
+    public Movie movie;
+
+    public Comment() {
+    }
 
     //regular comment
-    public Comment(Date date, String content, User user) {
+    public Comment(Date date, String content, User user, Movie movie) {
         this.date = date;
         this.content = content;
         this.user = user;
+        this.movie = movie;
     }
 
     //review
@@ -44,4 +50,6 @@ public class Comment {
     public void setContent(String content) {this.content = content;}
     public Date getDate() {return date;}
     public void setDate(Date date) {this.date = date;}
+    public Movie getMovie() {return movie;}
+    public void setMovie(Movie movie) {this.movie = movie;}
 }

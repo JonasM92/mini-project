@@ -1,0 +1,2 @@
+INSERT INTO movies.movie (genre, length, rating, summary, title) VALUES ('Action', 127, 7, 'Something with dinosaurs', 'Jurassic World');
+INSERT INTO movies.movie (genre, length, rating, summary, title) VALUES ('Action', 180, 4, 'Something with cars', 'Furious Seven');

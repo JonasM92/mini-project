@@ -13,7 +13,7 @@ public class Movie {
     public int id;
 
     public String title;
-    @OneToMany
+    @OneToMany(mappedBy = "id")
     public List<Character> cast;
 
     public int length;
@@ -26,7 +26,13 @@ public class Movie {
     public int rating;
     public String trailer;
 
-    public Movie(String title, List<Character> cast, int length, Director director, String summary, String poster, String genre, int rating, String trailer) {
+    @OneToMany(mappedBy = "id")
+    public List<Comment> comments;
+
+    public Movie() {
+    }
+
+    public Movie(String title, List<Character> cast, int length, Director director, String summary, String poster, String genre, int rating, String trailer, List<Comment> comments) {
         this.title = title;
         this.cast = cast;
         this.length = length;
@@ -36,10 +42,13 @@ public class Movie {
         this.genre = genre;
         this.rating = rating;
         this.trailer = trailer;
+        this.comments = comments;
     }
 
     public int getId() {return id;}
     public void setId(int id) {this.id = id;}
+    public String getTitle() {return title;}
+    public void setTitle(String title) {this.title = title;}
     public List<Character> getCast() {return cast;}
     public void setCast(List<Character> cast) {this.cast = cast;}
     public int getLength() {return length;}
@@ -56,4 +65,6 @@ public class Movie {
     public void setRating(int rating) {this.rating = rating;}
     public String getTrailer() {return trailer;}
     public void setTrailer(String trailer) {this.trailer = trailer;}
+    public List<Comment> getComments() {return comments;}
+    public void setComments(List<Comment> comments) {this.comments = comments;}
 }

@@ -16,8 +16,11 @@ public class User {
     public String password;
     public String email;
 
-    @OneToMany
+    @OneToMany(mappedBy = "user")
     public List<Comment> posts;
+
+    public User() {
+    }
 
     public User(String userName, String password, String email, List<Comment> posts) {
         this.userName = userName;
