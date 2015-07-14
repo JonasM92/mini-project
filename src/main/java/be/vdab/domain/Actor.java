@@ -14,9 +14,11 @@ public class Actor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int id;
 
+    @Column(name="actorName")
     public String name;
     public String bio;
     public Date birthDate;
+    @Enumerated(EnumType.STRING)
     public Gender g;
     public byte[] picture;
 

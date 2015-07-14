@@ -16,15 +16,26 @@ public class UserController {
     @Autowired
     UserRepository userRepository;
 
-    @RequestMapping("home/registration")
-    public String form(Map<String, Object> model) {
+    @RequestMapping("home/user/registration")
+    public String registerForm(Map<String, Object> model) {
         model.put("user",new User());
-        return "user/register";
+        return "users/register";
     }
 
     @RequestMapping(value= "home/user/addUser", method = RequestMethod.POST)
     public String create(User user) {
         userRepository.save(user);
-        return "redirect:home";
+        return "redirect:/home";
+    }
+
+    @RequestMapping(value= "home/user/login")
+    public String loginForm(Map<String, Object> model) {
+        model.put("user",new User());
+        return "users/login";
+    }
+
+    @RequestMapping(value= "home/user/logout")
+    public String logout(User user) {
+        return "redirect:/home";
     }
 }
