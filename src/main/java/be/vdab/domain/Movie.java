@@ -22,7 +22,8 @@ public class Movie {
     public Director director;
     public String summary;
     public byte[] poster;
-    public String genre;
+    @ManyToOne
+    public Genre genre;
     public int rating;
     public String trailer;
 
@@ -32,7 +33,7 @@ public class Movie {
     public Movie() {
     }
 
-    public Movie(String title, List<Character> cast, int length, Director director, String summary, byte[] poster, String genre, int rating, String trailer, List<Comment> comments) {
+    public Movie(String title, List<Character> cast, int length, Director director, String summary, byte[] poster, Genre genre, int rating, String trailer, List<Comment> comments) {
         this.title = title;
         this.cast = cast;
         this.length = length;
@@ -59,8 +60,8 @@ public class Movie {
     public void setSummary(String summary) {this.summary = summary;}
     public byte[] getPoster() {return poster;}
     public void setPoster(byte[] poster) {this.poster = poster;}
-    public String getGenre() {return genre;}
-    public void setGenre(String genre) {this.genre = genre;}
+    public Genre getGenre() {return genre;}
+    public void setGenre(Genre genre) {this.genre = genre;}
     public int getRating() {return rating;}
     public void setRating(int rating) {this.rating = rating;}
     public String getTrailer() {return trailer;}

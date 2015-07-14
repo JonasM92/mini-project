@@ -21,25 +21,41 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body>
-<h3>Films</h3>
-<table class="table-striped table-bordered ">
-  <c:choose>
-    <c:when test="${empty actors}">
-      <p>The database appears to be empty</p>
-    </c:when>
+<div class="container"></div>
+  <h3>Films</h3>
+  <table class="table table-striped table-bordered ">
+    <c:choose>
+      <c:when test="${empty actors}">
+        <p>The database appears to be empty</p>
+      </c:when>
 
-    <c:otherwise>
-      <c:forEach items="${actors}" var="actor" >
-        <tr>
-          <td>${actor.id}</td>
-          <td><a href=<c:url value="/home/actor?id=${actor.id}"/> >${actor.name}</a></td>
-          <td><img class="img-thumbnail" style="width:25%;height:25%" src="${actor.picture}" /></td>
-        </tr>
-      </c:forEach>
-    </c:otherwise>
-
-  </c:choose>
-</table>
-
+      <c:otherwise>
+        <c:forEach items="${actors}" var="actor" >
+          <tr>
+            <td align="center" style="vertical-align:middle">${actor.id}</td>
+            <td align="center" style="vertical-align:middle"><a href=<c:url value="/home/actor?id=${actor.id}"/> >${actor.name}</a></td>
+            <td align="center" style="vertical-align:middle"><img class="img-thumbnail" style="width:25%;height:25%" src="${actor.picture}" /></td>
+            <td align="center" style="vertical-align:middle">
+              <a class="btn btn-info" href=<c:url value="/home/movie?id=${movie.id}"/> data-toggle="tooltip" title="View Details">
+                <span class="glyphicon glyphicon-search"></span>
+              </a>
+              <a class="btn btn-warning" href="/home/movie/create" data-toggle="tooltip" title="Edit">
+                <span class="glyphicon glyphicon-pencil"></span>
+              </a>
+              <a class="btn btn-danger" href=<c:url value="/home/movie/remove?id=${movie.id}"/> data-toggle="tooltip" title="Remove from database">
+                <span class="glyphicon glyphicon-remove"></span>
+              </a>
+            </td>
+          </tr>
+        </c:forEach>
+      </c:otherwise>
+    </c:choose>
+  </table>
+</div>
+<script type="application/javascript">
+  $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+</script>
 </body>
 </html>

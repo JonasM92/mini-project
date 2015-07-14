@@ -15,8 +15,8 @@
 <body>
 <div class="container">
   <h2>Add New Movie</h2>
-  <div class="form-horizontal">
-    <sf:form action="home/movie/addMovie" commandName="movie">
+  <div class="form">
+    <sf:form action="addMovie" commandName="movie">
     <sf:hidden path="id" />
     <div class="form-group">
       <label for="title">Title:</label>
@@ -27,16 +27,20 @@
       <sf:input path="genre" cssClass="form-control"/>
     </div>
     <div class="form-group">
-      <label for="director">Director:</label>
-      <sf:input path="director" cssClass="form-control"/>
-    </div>
-    <div class="form-group">
       <label for="length">Length in minutes:</label>
       <sf:input path="length" cssClass="form-control"/>
     </div>
     <div class="form-group">
+      <label for="director">Director:</label>
+      <sf:input path="director" cssClass="form-control"/>
+    </div>
+    <div class="form-group">
       <label for="summary">Summary:</label></br>
       <sf:textarea path="summary" cssClass="form-control"/>
+    </div>
+    <div class="form-group">
+      <label for="trailer">Trailer (youtube url)</label></br>
+      <sf:input path="trailer" cssClass="form-control"/>
     </div>
     <div class="form-group">
       <input type="submit" value="Confirm" class="btn btn-success btn-block"/>

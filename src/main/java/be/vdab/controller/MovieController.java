@@ -38,6 +38,7 @@ public class MovieController {
 
     @RequestMapping("home/movie/create")
     public String form(Map<String, Object> model) {
+        String url = (String)model.get("");
         model.put("movie",new Movie());
         return "movies/create";
     }
@@ -45,7 +46,12 @@ public class MovieController {
     @RequestMapping(value= "home/movie/addMovie", method = RequestMethod.POST)
     public String create(Movie movie) {
         movieRepository.save(movie);
-        return "redirect:home/movies";
+        return "redirect:/home/movies";
     }
 
+    @RequestMapping(value= "home/movie/remove")
+    public String remove(@RequestParam("id") Integer id) {
+        movieRepository.delete(id);
+        return "redirect:/home/movies";
+    }
 }

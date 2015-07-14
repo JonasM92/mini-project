@@ -11,10 +11,32 @@
 <html>
 <head>
   <title></title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
 <body>
-<h3>${actor.name}</h3>
-<p>${actor.g}</p>
-
+<div class="container">
+  <table class="table table-bordered table-striped">
+    <tr>
+      <th colspan="2">
+        <h3>
+          ${actor.name}&nbsp
+          <a class="btn btn-warning" href="/home/movie/create" data-toggle="tooltip" title="Edit">
+            <span class="glyphicon glyphicon-pencil"></span>
+          </a>
+        </h3>
+      </th>
+    </tr>
+    <tr>
+      <td rowspan="2">${actor.picture}</td>
+      <td>${actor.g}</td>
+    </tr>
+    <tr>
+      <td>${actor.birthDate.toString().split(" ")[0]}</td>
+    </tr>
+    <tr>
+      <td colspan="2">${actor.bio}</td>
+    </tr>
+  </table>
+</div>
 </body>
 </html>
