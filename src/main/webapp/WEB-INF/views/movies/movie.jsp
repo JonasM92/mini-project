@@ -18,7 +18,7 @@
 <div class="container">
   <table class="table table-striped table-bordered">
     <tr>
-      <th colspan="2">
+      <th align="center" style="vertical-align:middle" colspan="2">
         <h3>
           ${movie.title}&nbsp
           <a class="btn btn-warning" href="/home/movie/create" data-toggle="tooltip" title="Edit">
@@ -29,20 +29,20 @@
       </th>
     </tr>
     <tr>
-      <td rowspan="3"><img src="${movie.poster}"/></td>
-      <td>Genre: ${movie.genre}</td>
+      <td align="center" style="vertical-align:middle" rowspan="3"><img src="${movie.poster}"/></td>
+      <td align="center" style="vertical-align:middle" >Genre: ${movie.genre}</td>
     </tr>
     <tr>
-      <td>Duration: ${movie.length}</td>
+      <td align="center" style="vertical-align:middle">Duration: ${movie.length}</td>
     </tr>
     <tr>
-      <td>Director: ${movie.director.name}</td>
+      <td align="center" style="vertical-align:middle">Director: ${movie.director.name}</td>
     </tr>
     <tr>
-      <td colspan="2">Summary:</br>${movie.summary}</td>
+      <td align="center" style="vertical-align:middle" colspan="2">Summary:</br>${movie.summary}</td>
     </tr>
     <tr>
-      <td colspan="2" align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/${movie.trailer.split("=")[1]}" frameborder="0" allowfullscreen></iframe></td>
+      <td align="center" style="vertical-align:middle" colspan="2" align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/${movie.trailer.split("=")[1]}" frameborder="0" allowfullscreen></iframe></td>
     </tr>
   </table>
   <a href="/home/movies">Back</a>
