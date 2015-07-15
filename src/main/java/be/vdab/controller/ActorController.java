@@ -1,9 +1,11 @@
 package be.vdab.controller;
 
+import be.vdab.domain.Actor;
 import be.vdab.repository.ActorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Map;
@@ -25,6 +27,24 @@ public class ActorController {
     public String actors(Map<String, Object> model) {
         model.put("actors",actorRepository.findAll());
         return "actors/list";
+    }
+
+    @RequestMapping("home/actor/create")
+    public String form(Map<String, Object> model) {
+        model.put("actor",new Actor());
+        return "actors/add";
+    }
+
+    @RequestMapping(value= "home/actor/addActor", method = RequestMethod.POST)
+    public String create(Actor actor) {
+        actorRepository.save(actor);
+        return "redirect:/home/actors";
+    }
+
+    @RequestMapping(value= "home/actor/remove")
+    public String remove(@RequestParam("id") Integer id) {
+        actorRepository.delete(id);
+        return "redirect:/home/actors";
     }
 
 }

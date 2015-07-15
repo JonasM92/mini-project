@@ -54,7 +54,7 @@
     <tr>
       <td colspan="4" style="vertical-align: middle;">
         <a class="btn btn-success" href="/home/movie/create" data-toggle="tooltip" title="Add">
-          <span class="glyphicon glyphicon-plus"></span>
+          <span class="glyphicon glyphicon-plus"></span>&nbsp Add a movie
         </a>
       </td>
     </tr>
