@@ -31,7 +31,7 @@
     </div>
     <div class="form-group">
       <label for="genre">genre</label>
-      <sf:select path="genre" items="${genres}" cssClass="form-control"/>
+      <sf:select path="genre" items="${genres}" itemLabel="genre" itemValue="id" cssClass="form-control"/>
     </div>
     <div class="form-group">
       <label for="length">Length in minutes:</label>

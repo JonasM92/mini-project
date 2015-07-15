@@ -18,10 +18,10 @@
             <h1>Home</h1>
             <p>This is the home page.</p>
             <div class="form-group">
-                <a href="movies" class="btn btn-primary btn-block">Movies</a>
+                <a href="home/movies" class="btn btn-primary btn-block">Movies</a>
             </div>
             <div class="form-group">
-                <a href="actors" class="btn btn-primary btn-block">Actors</a>
+                <a href="home/actors" class="btn btn-primary btn-block">Actors</a>
             </div>
         </div>
     </body>
