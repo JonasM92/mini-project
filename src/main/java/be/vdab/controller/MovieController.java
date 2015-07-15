@@ -36,9 +36,12 @@ public class MovieController {
     }
 
     @RequestMapping("home/movie/create")
-    public String form(Map<String, Object> model) {
-        String url = (String)model.get("");
-        model.put("movie",new Movie());
+    public String form(Map<String, Object> model, @RequestParam(value = "id",required = false) Integer id) {
+        if(id!=null)    {
+            model.put("movie", movieRepository.findOne(id));
+        } else {
+            model.put("movie", new Movie());
+        }
         return "movies/create";
     }
 

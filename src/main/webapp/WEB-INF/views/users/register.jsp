@@ -13,8 +13,9 @@
 <head>
   <title>Register</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 </head>
-<body>
+<body class="">
   <div class="container">
     <h2>Registration</h2>
     <sf:form action="addUser" commandName="user" cssClass="form-horizontal">

@@ -11,10 +11,11 @@
 <head>
   <title>New actor</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 </head>
 <body>
 <div class="container">
-  <h2>Add New Actorg</h2>
+  <h2>Add New Actor</h2>
   <div class="form">
     <sf:form action="addActor" commandName="actor">
       <sf:hidden path="id" />
