@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 /**
  * Created by jeansmits on 14/07/15.
  */
-public interface GenreReposiroty extends JpaRepository<Genre, Integer> {
+public interface GenreRepository extends JpaRepository<Genre, Integer> {
 }

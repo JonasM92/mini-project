@@ -30,7 +30,7 @@
       </div>
       <div class="form-group">
         <label for="password">Password:</label>
-        <sf:input path="password" cssClass="form-control"/>
+        <sf:password path="password" cssClass="form-control"/>
       </div>
       <input type="submit" value="Confirm" class="btn btn-success btn-block"/>
     </sf:form>

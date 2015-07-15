@@ -28,7 +28,7 @@
       </th>
     </tr>
     <tr>
-      <td rowspan="2">${actor.picture}</td>
+      <td rowspan="2"><img src="${actor.picture}"/></td>
       <td>${actor.g}</td>
     </tr>
     <tr>

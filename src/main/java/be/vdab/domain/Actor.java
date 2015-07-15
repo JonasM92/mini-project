@@ -20,7 +20,7 @@ public class Actor {
     public Date birthDate;
     @Enumerated(EnumType.STRING)
     public Gender g;
-    public byte[] picture;
+    public String picture;
 
     @OneToMany(mappedBy = "actor")
     public List<Character> occurences;
@@ -28,13 +28,18 @@ public class Actor {
     public Actor() {
     }
 
-    public Actor(String name, String bio, Date birthDate, Gender g, byte[] picture, List<Character> occurences) {
+    public Actor(String name, String bio, Date birthDate, Gender g, String picture, List<Character> occurences) {
         this.name = name;
         this.bio = bio;
         this.birthDate = birthDate;
         this.g = g;
         this.picture = picture;
         this.occurences = occurences;
+    }
+
+    @Override
+    public String toString() {
+        return this.name;
     }
 
     public int getId() {return id;}
@@ -47,8 +52,8 @@ public class Actor {
     public void setBirthDate(Date birthDate) {this.birthDate = birthDate;}
     public Gender getG() {return g;}
     public void setG(Gender g) {this.g = g;}
-    public byte[] getPicture() {return picture;}
-    public void setPicture(byte[] picture) {this.picture = picture;}
+    public String getPicture() {return picture;}
+    public void setPicture(String picture) {this.picture = picture;}
     public List<Character> getFilmography() {return occurences;}
     public void setFilmography(List<Character> filmography) {this.occurences = filmography;}
 }

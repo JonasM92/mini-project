@@ -39,7 +39,7 @@
               <a class="btn btn-info" href=<c:url value="/home/actor?id=${actor.id}"/> data-toggle="tooltip" title="View Details">
                 <span class="glyphicon glyphicon-search"></span>
               </a>
-              <a class="btn btn-warning" href="/home/actor/create" data-toggle="tooltip" title="Edit">
+              <a class="btn btn-warning" href=<c:url value="/home/actor/create?id=${actor.id}"/> data-toggle="tooltip" title="Edit">
                 <span class="glyphicon glyphicon-pencil"></span>
               </a>
               <a class="btn btn-danger" href=<c:url value="/home/movie/remove?id=${actor.id}"/> data-toggle="tooltip" title="Remove from database">

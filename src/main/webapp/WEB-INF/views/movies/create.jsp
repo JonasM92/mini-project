@@ -1,4 +1,5 @@
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: jeansmits
@@ -18,14 +19,19 @@
   <h2>Add New Movie</h2>
   <div class="form">
     <sf:form action="addMovie" commandName="movie">
+      <sf:errors path="*"/>
     <sf:hidden path="id" />
     <div class="form-group">
       <label for="title">Title:</label>
       <sf:input path="title" cssClass="form-control"/>
     </div>
     <div class="form-group">
-      <label for="genre">Genre:</label>
-      <sf:input path="genre" cssClass="form-control"/>
+      <label for="poster">Poster (url)</label>
+      <sf:input path="poster" cssClass="form-control"/>
+    </div>
+    <div class="form-group">
+      <label for="genre">genre</label>
+      <sf:select path="genre" items="${genres}" cssClass="form-control"/>
     </div>
     <div class="form-group">
       <label for="length">Length in minutes:</label>
@@ -36,11 +42,15 @@
       <sf:input path="director" cssClass="form-control"/>
     </div>
     <div class="form-group">
-      <label for="summary">Summary:</label></br>
+      <label for="cast">Cast</label>
+      <sf:select multiple="true" path="cast" items="${actors}" cssClass="form-control"/>
+    </div>
+    <div class="form-group">
+      <label for="summary">Summary:</label>
       <sf:textarea path="summary" cssClass="form-control"/>
     </div>
     <div class="form-group">
-      <label for="trailer">Trailer (youtube url)</label></br>
+      <label for="trailer">Trailer (youtube url)</label>
       <sf:input path="trailer" cssClass="form-control"/>
     </div>
     <div class="form-group">

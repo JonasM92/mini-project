@@ -29,7 +29,7 @@
       </th>
     </tr>
     <tr>
-      <td rowspan="3">${movie.poster}</td>
+      <td rowspan="3"><img src="${movie.poster}"/></td>
       <td>Genre: ${movie.genre}</td>
     </tr>
     <tr>

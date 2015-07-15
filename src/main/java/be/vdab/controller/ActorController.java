@@ -30,8 +30,12 @@ public class ActorController {
     }
 
     @RequestMapping("home/actor/create")
-    public String form(Map<String, Object> model) {
-        model.put("actor",new Actor());
+    public String form(Map<String, Object> model, @RequestParam(value = "id",required = false) Integer id) {
+        if(id!=null)    {
+            model.put("actor", actorRepository.findOne(id));
+        } else {
+            model.put("actor", new Actor());
+        }
         return "actors/add";
     }
 

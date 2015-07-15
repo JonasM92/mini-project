@@ -32,6 +32,10 @@
         <sf:input path="birthDate" cssClass="form-control"/>
       </div>
       <div class="form-group">
+        <label for="picture">Picture (url)</label>
+        <sf:input path="picture" cssClass="form-control"/>
+      </div>
+      <div class="form-group">
         <label for="bio">Bio:</label>
         <sf:textarea path="bio" cssClass="form-control"/>
       </div>
