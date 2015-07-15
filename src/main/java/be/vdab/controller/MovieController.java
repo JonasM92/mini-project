@@ -34,6 +34,11 @@ public class MovieController {
         return "home";
     }
 
+    @RequestMapping("/")
+    public String index() {
+        return "redirect:/home";
+    }
+
 
     @RequestMapping("home/movie")
     public String movie(Map<String, Object> model, @RequestParam("id") Integer id) {
