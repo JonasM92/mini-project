@@ -14,23 +14,22 @@ public class Director {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int id;
 
+    @Column(name="directorName")
     public String name;
     @OneToMany(mappedBy = "director")
     public List<Movie> filmography;
 
     public Date birthDate;
     public Gender g;
-    public String picture;
 
     public Director() {
     }
 
-    public Director(String name, List<Movie> filmography, Date birthDate, Gender g, String picture) {
+    public Director(String name, List<Movie> filmography, Date birthDate, Gender g) {
         this.name = name;
         this.filmography = filmography;
         this.birthDate = birthDate;
         this.g = g;
-        this.picture = picture;
     }
 
     public int getId() {return id;}
@@ -43,6 +42,4 @@ public class Director {
     public void setBirthDate(Date birthDate) {this.birthDate = birthDate;}
     public Gender getG() {return g;}
     public void setG(Gender g) {this.g = g;}
-    public String getPicture() {return picture;}
-    public void setPicture(String picture) {this.picture = picture;}
 }

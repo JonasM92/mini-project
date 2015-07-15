@@ -4,9 +4,11 @@ INSERT INTO user (email, password, user_name) values ('jonas.meuleman@gmail.com'
 
 INSERT INTO genre (genre) VALUES ('Action'),('Animation'),('Biography'),('Comedy'),('Documentary'),('Drama'),('Family'),('Fantasy'),('Film-Noir'),('Horror'),('Musical'),('Science-Fiction'),('Thriller'),('Western');
 
-# INSERT INTO director (name, g, birth_date, picture) VALUES ('Alan Taylor', 'MALE', )
+INSERT INTO director (director_name, g, birth_date, picture) VALUES ('Alan Taylor', 'MALE', '1965-01-01')
 INSERT INTO movie (length, rating, summary, title, trailer, genre_id, poster) VALUES (127, 7, 'Something with dinosaurs', 'Jurassic World', 'https://www.youtube.com/watch?v=RFinNxS5KN4', 12, 'http://ia.media-imdb.com/images/M/MV5BMTQ5MTE0MTk3Nl5BMl5BanBnXkFtZTgwMjczMzk2NTE@._V1_SX214_AL_.jpg');
+INSERT INTO director (director_name, g, birth_date, picture) VALUES ('Alan Taylor', 'MALE', '1965-01-01')
 INSERT INTO movie (length, rating, summary, title, trailer, genre_id, poster) VALUES (180, 4, 'Something with cars', 'Furious Seven', 'https://www.youtube.com/watch?v=Skpu5HaVkOc' , 1, 'http://ia.media-imdb.com/images/M/MV5BMTQxOTA2NDUzOV5BMl5BanBnXkFtZTgwNzY2MTMxMzE@._V1_SX214_AL_.jpg');
+INSERT INTO director (director_name, g, birth_date, picture) VALUES ('Alan Taylor', 'MALE', '1965-01-01')
 INSERT INTO movie (length, rating, summary, title, trailer, genre_id, poster) VALUES (170, 6, 'Something with robots and time travel', 'Terminator:Genisys', 'https://www.youtube.com/watch?v=62E4FJTwSuc' , 12, 'http://ia.media-imdb.com/images/M/MV5BMjM1NTc0NzE4OF5BMl5BanBnXkFtZTgwNDkyNjQ1NTE@._V1_SX214_AL_.jpg');
 
 
