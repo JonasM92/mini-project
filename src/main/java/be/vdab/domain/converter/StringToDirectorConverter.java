@@ -15,7 +15,12 @@ public class StringToDirectorConverter implements Converter<String, Director> {
     private DirectorRepository directorRepository;
 
     @Override
-    public Director convert(String source) {
-        return directorRepository.findByNameIgnoringCase(source);
+    public Director convert(String name) {
+        Director director = directorRepository.findByNameIgnoringCase(name);
+        if(director != null) {
+            return directorRepository.findByNameIgnoringCase(name);
+        } else {
+            return new Director(name);
+        }
     }
 }

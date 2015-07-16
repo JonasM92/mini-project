@@ -3,7 +3,9 @@ package be.vdab.controller;
 import be.vdab.domain.Actor;
 import be.vdab.domain.Genre;
 import be.vdab.domain.Movie;
+import be.vdab.domain.Character;
 import be.vdab.repository.ActorRepository;
+import be.vdab.repository.CharacterRepository;
 import be.vdab.repository.GenreRepository;
 import be.vdab.repository.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +31,8 @@ public class MovieController {
     GenreRepository genreRepository;
     @Autowired
     ActorRepository actorRepository;
+    @Autowired
+    CharacterRepository characterRepository;
 
     @RequestMapping("home")
     public String home() {
@@ -44,6 +48,7 @@ public class MovieController {
     @RequestMapping("home/movie")
     public String movie(Map<String, Object> model, @RequestParam("id") Integer id) {
         model.put("movie",movieRepository.findOne(id));
+        model.put("characters",characterRepository.findAll());
         return "movies/movie";
     }
     //List of all movies. Can be sorted
@@ -102,5 +107,11 @@ public class MovieController {
     public List<Actor> actors(){
         List<Actor> actors = actorRepository.findAll();
         return actors;
+    }
+
+    @ModelAttribute(value= "characters")
+    public List<Character> characters(){
+        List<Character> characters = characterRepository.findAll();
+        return characters;
     }
 }

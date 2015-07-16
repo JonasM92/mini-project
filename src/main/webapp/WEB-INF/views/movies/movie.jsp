@@ -52,6 +52,33 @@
       <li><a href="">Comments</a></li>
     </ul>
   </nav>
+  <table class="table table-striped table-bordered">
+    <tr>
+      <th>Character ID</th>
+      <th>Character Name</th>
+      <th>Actor Name</th>
+    </tr>
+    <c:choose>
+      <c:when test="${empty characters}">
+        <p>The database appears to be empty</p>
+      </c:when>
+
+      <c:otherwise>
+        <c:forEach items="${characters}" var="character" >
+
+          <c:if test="${movie.id == character.movie.id}">
+            <tr>
+              <td align="center" style="vertical-align:middle">${character.id}</td>
+              <td align="center" style="vertical-align:middle"><a href=<c:url value="/home/actor?id=${character.actor.id}"/>>${character.actor}</a></td>
+              <td align="center" style="vertical-align:middle">${character.characterName}</td>
+              </td>
+            </tr>
+          </c:if>
+        </c:forEach>
+      </c:otherwise>
+
+    </c:choose>
+  </table>
   <a href="/home/movies">Back</a>
 </div>
 <script type="application/javascript">

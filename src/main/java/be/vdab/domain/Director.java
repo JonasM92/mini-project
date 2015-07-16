@@ -26,6 +26,10 @@ public class Director {
     public Director() {
     }
 
+    public Director(String name) {
+        this.name=name;
+    }
+
     public Director(String name, List<Movie> filmography, Date birthDate, Gender g) {
         this.name = name;
         this.filmography = filmography;
