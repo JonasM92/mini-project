@@ -41,6 +41,21 @@
     <tr>
       <td align="center" style="vertical-align:middle" colspan="2">Summary:</br>${movie.summary}</td>
     </tr>
+    <c:if test="${movie.title.equals(\"Doctor Who\")}">
+      <tr>
+        <td colspan="2">
+          <a href="https://www.google.com/maps/@51.492145,-0.192978,3a,75y,281.48h,84.1t/data=!3m7!1e1!3m5!1s9SNlG6n9D5kAAAQIt-IsBw!2e0!3e2!7i13312!8i6656?hl=en">
+            <img src="http://orig09.deviantart.net/7cfe/f/2012/339/b/b/tardis_free_icon_by_pinkyri-d5da6jb.gif" />
+          </a>
+          <blockquote>
+            <%
+              int i = (int)java.lang.Math.round(java.lang.Math.random() * 20);
+              out.println(((java.util.List)request.getAttribute("quotes")).get(i));
+            %>
+          </blockquote>
+        </td>
+      </tr>
+    </c:if>
     <tr>
       <td align="center" style="vertical-align:middle" colspan="2" align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/${movie.trailer.split("=")[1]}" frameborder="0" allowfullscreen></iframe></td>
     </tr>
@@ -62,7 +77,6 @@
       <c:when test="${empty characters}">
         <p>The database appears to be empty</p>
       </c:when>
-
       <c:otherwise>
         <c:forEach items="${characters}" var="character" >
 

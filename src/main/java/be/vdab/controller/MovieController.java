@@ -1,13 +1,8 @@
 package be.vdab.controller;
 
-import be.vdab.domain.Actor;
-import be.vdab.domain.Genre;
-import be.vdab.domain.Movie;
+import be.vdab.domain.*;
 import be.vdab.domain.Character;
-import be.vdab.repository.ActorRepository;
-import be.vdab.repository.CharacterRepository;
-import be.vdab.repository.GenreRepository;
-import be.vdab.repository.MovieRepository;
+import be.vdab.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
@@ -33,6 +28,9 @@ public class MovieController {
     ActorRepository actorRepository;
     @Autowired
     CharacterRepository characterRepository;
+    @Autowired
+    QuoteRepository quoteRepository;
+
 
     @RequestMapping("home")
     public String home() {
@@ -49,6 +47,7 @@ public class MovieController {
     public String movie(Map<String, Object> model, @RequestParam("id") Integer id) {
         model.put("movie",movieRepository.findOne(id));
         model.put("characters",characterRepository.findAll());
+        model.put("quotes",quoteRepository.findAll());
         return "movies/movie";
     }
     //List of all movies. Can be sorted
@@ -113,5 +112,11 @@ public class MovieController {
     public List<Character> characters(){
         List<Character> characters = characterRepository.findAll();
         return characters;
+    }
+
+    @ModelAttribute(value="quotes")
+    public List<Quote> quotes(){
+        List<Quote> quotes = quoteRepository.findAll();
+        return quotes;
     }
 }
