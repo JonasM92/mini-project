@@ -21,7 +21,7 @@
       <th align="center" style="vertical-align:middle" colspan="2">
         <h3>
           ${movie.title}&nbsp
-          <a class="btn btn-warning" href="/home/movie/create" data-toggle="tooltip" title="Edit">
+          <a class="btn btn-warning" href="/home/movie/create?id=${movie.id}" data-toggle="tooltip" title="Edit">
             <span class="glyphicon glyphicon-pencil"></span>
           </a>
         </h3>
