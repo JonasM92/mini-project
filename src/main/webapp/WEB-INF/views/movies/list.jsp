@@ -24,6 +24,12 @@
 <div class="container">
   <h3>Films</h3>
   <table class="table table-striped table-bordered " >
+    <tr>
+      <th align="center" style="vertical-align:middle"><a href="/home/movies">Id</a></th>
+      <th align="center" style="vertical-align:middle"><a href="/home/movies?sortby=title">Title</a></th>
+      <th align="center" style="vertical-align:middle">Poster</th>
+      <th></th>
+    </tr>
     <c:choose>
       <c:when test="${empty movies}">
         <p>The database appears to be empty</p>

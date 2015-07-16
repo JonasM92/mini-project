@@ -20,6 +20,7 @@ public class Director {
     public List<Movie> filmography;
 
     public Date birthDate;
+    @Enumerated(EnumType.STRING)
     public Gender g;
 
     public Director() {

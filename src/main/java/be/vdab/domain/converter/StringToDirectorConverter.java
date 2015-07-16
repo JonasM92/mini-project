@@ -16,6 +16,6 @@ public class StringToDirectorConverter implements Converter<String, Director> {
 
     @Override
     public Director convert(String source) {
-        return directorRepository.findOne(Integer.parseInt(source));
+        return directorRepository.findByNameIgnoringCase(source);
     }
 }

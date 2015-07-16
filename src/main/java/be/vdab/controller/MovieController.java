@@ -7,6 +7,7 @@ import be.vdab.repository.ActorRepository;
 import be.vdab.repository.GenreRepository;
 import be.vdab.repository.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -39,17 +40,24 @@ public class MovieController {
         return "redirect:/home";
     }
 
-
+    //Movie detailed view
     @RequestMapping("home/movie")
     public String movie(Map<String, Object> model, @RequestParam("id") Integer id) {
         model.put("movie",movieRepository.findOne(id));
         return "movies/movie";
     }
+    //List of all movies. Can be sorted
     @RequestMapping("home/movies")
-    public String movies(Map<String, Object> model) {
-        model.put("movies",movieRepository.findAll());
-        return "movies/list";
+    public String movies(Map<String, Object> model, @RequestParam(value="sortby",required=false)String sort) {
+        if (sort == null || !sort.equals("title")) {
+            model.put("movies", movieRepository.findAll());
+            return "movies/list";
+        } else {
+            model.put("movies", movieRepository.findAll(new Sort(new Sort.Order(Sort.Direction.ASC, "title"))));
+            return "movies/list";
+        }
     }
+
 
     @RequestMapping("home/movie/create")
     public String form(Map<String, Object> model, @RequestParam(value = "id",required = false) Integer id) {

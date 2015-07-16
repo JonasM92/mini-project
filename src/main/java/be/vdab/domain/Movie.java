@@ -13,7 +13,7 @@ public class Movie {
     public int id;
 
     public String title;
-    @OneToMany(mappedBy = "id")
+    @OneToMany(mappedBy = "movie")
     public List<Character> cast;
 
     public int length;
@@ -27,7 +27,7 @@ public class Movie {
     public int rating;
     public String trailer;
 
-    @OneToMany(mappedBy = "id")
+    @OneToMany(mappedBy = "movie")
     public List<Comment> comments;
 
     public Movie() {

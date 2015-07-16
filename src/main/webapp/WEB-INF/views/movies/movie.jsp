@@ -45,6 +45,13 @@
       <td align="center" style="vertical-align:middle" colspan="2" align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/${movie.trailer.split("=")[1]}" frameborder="0" allowfullscreen></iframe></td>
     </tr>
   </table>
+  <nav>
+    <ul class="nav nav-tabs">
+      <li><a href="">Cast</a></li>
+      <li><a href="">Reviews</a></li>
+      <li><a href="">Comments</a></li>
+    </ul>
+  </nav>
   <a href="/home/movies">Back</a>
 </div>
 <script type="application/javascript">
